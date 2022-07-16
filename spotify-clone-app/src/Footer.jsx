@@ -20,14 +20,22 @@ function Footer() {
         <div className='footer'>
             <div className='footer__left'>
 
+                <img className='footer__albumLogo'
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Thefirsttakelogo.jpg/640px-Thefirsttakelogo.jpg"
+                    alt='' />
+                <div className='footer__songInfo'>
+                    <h1>Yeah!</h1>
+                    <p>songInfo</p>
+
+
+                </div>
+
+
                 {/* <img
                     className="footer__albumLogo"
                     src={item?.album.images[0].url}
                     alt={item?.name}
                 /> */}
-
-
-
             </div>
             <div className='footer__center'>
                 <BsShuffle size={30} className='footer__green' />

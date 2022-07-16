@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import "./Sidebar.css"
 import SidebarOption from './SidebarOption'
 import { AiFillHome } from "react-icons/ai";
@@ -12,8 +12,10 @@ import { useDataLayerValue } from './DataLayer';
 
 function Sidebar() {
     const [{ playlists }, dispatch] = useDataLayerValue();
-    console.log(playlists);
-
+    console.log("Playlist",playlists);
+    let p = {
+        items: [1, 2, 3]
+    }
     return (
         <div className='sidebar'>
             <img
@@ -28,9 +30,9 @@ function Sidebar() {
 
             <strong className='sidebar__title'>PLAYLISTS</strong>
             <hr />
-           
-            {playlists?.items?.map((playlist) => (
-                <SidebarOption option={playlist.name} />
+
+            {playlists?.items?.map((playlist, key) => (
+                <SidebarOption title={playlist.name} />
             ))}
         </div>
     );
