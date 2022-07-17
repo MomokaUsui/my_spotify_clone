@@ -22,6 +22,7 @@ const scopes = [
     "user-read-currently-playing",
     "playlist-read-private",
     "playlist-read-collaborative",
+    
 ];
 
 export const getTokenFromUrl = () => {

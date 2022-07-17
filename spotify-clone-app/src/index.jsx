@@ -5,15 +5,27 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { DataLayer } from './DataLayer';
 import reducer, { initialState } from './reducer';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+import MyTrack from './MyTrack';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <DataLayer initialState={initialState} reducer={reducer}>
-      <App />
-    </DataLayer>
 
-  </React.StrictMode>
+  <BrowserRouter>
+    <DataLayer initialState={initialState} reducer={reducer}>
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path='MyTrack' element={<MyTrack/>}/>
+      </Routes>
+
+
+    </DataLayer>
+  </BrowserRouter>
+
 );
 
 // If you want to start measuring performance in your app, pass a function
