@@ -33,6 +33,13 @@ const reducer = (state, action) => {
                 ...state,
                 discover_weekly: action.discover_weekly,
             };
+        //7/17日追記
+        case "SET_TOP_TRACKS":
+            return {
+                ...state,
+                top_tracks: action.top_tracks,
+            };
+
         case "SET_TOP_ARTISTS":
             return {
                 ...state,

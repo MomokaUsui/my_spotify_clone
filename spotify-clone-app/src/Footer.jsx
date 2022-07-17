@@ -31,11 +31,7 @@ function Footer() {
                 </div>
 
 
-                {/* <img
-                    className="footer__albumLogo"
-                    src={item?.album.images[0].url}
-                    alt={item?.name}
-                /> */}
+             
             </div>
             <div className='footer__center'>
                 <BsShuffle size={30} className='footer__green' />

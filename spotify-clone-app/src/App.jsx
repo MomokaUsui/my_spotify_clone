@@ -14,7 +14,7 @@ function App() {
   //ここわからない
   const [token, setToken] = useState(null);
   const [{ user }, dispatch] = useDataLayerValue();
-  
+
 
   useEffect(() => {
     const hash = getTokenFromUrl();
@@ -55,25 +55,31 @@ function App() {
         });
       });
 
-      spotify.getMyTopArtists().then((response) =>
+      //追加(7/17)
+      spotify.getMyRecentlyPlayedTracks().then((response) => 
         dispatch({
-          type: "SET_TOP_ARTISTS",
-          top_artists: response,
+          type: "SET_TOP_TRACKS",
+          top_tracks: response,
         })
       );
+
+
+
+    
 
       dispatch({
         type: "SET_SPOTIFY",
         spotify: spotify,
       });
-    
-      
+
+
     }
     // console.log("I HAVE A TOKEN>>>", token)
   }, []);
 
   console.log("👨", user)
   console.log("👾", token)
+
   return (
     <div className="App">
       {
