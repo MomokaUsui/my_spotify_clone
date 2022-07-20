@@ -1,5 +1,5 @@
 
-.mybody {
+.searchbody {
     padding: 30px;
     width: 245%;
     height: 100vh;
@@ -7,14 +7,14 @@
     flex: 1;
     color: rgb(233, 219, 219);
     background: linear-gradient(transparent, rgba(0, 0, 0, 1));
-    background-color: rgb(33, 78, 151);
+    background-color: rgb(163, 37, 115);
   }
   
-  .mybody::-webkit-scrollbar {
+  .searchbody::-webkit-scrollbar {
     display: none;
   }
   
-  .mybody__info {
+  .searchbody__info {
     display: flex;
     align-items: flex-end;
     padding: 10px;
@@ -51,30 +51,31 @@
     background-color: black;
   }
   
-  .mybody__songs {
+  .searchbody__songs {
     z-index: 1;
     margin: 20px -30px;
   }
   
-  .mybody__info > img {
+  .searchbody__info > img {
     height: 20vw;
     margin: 0 20px;
     box-shadow: 0 4px 60px rgba(117, 114, 114, 0.5);
   }
   
-  .mybody__infoText {
+  .searchbody__infoText {
     flex: 1;
   }
   
-  .mybody__infoText > h2 {
+  .searchbody__infoText > h2 {
     font-size: 48px;
     margin-bottom: 10px;
   }
   
-  .mybody__infoText > p {
+  .searchbody__infoText > p {
     font-size: 14px;
   }
 
   .body__heart{
     padding: 20px;
   }
+

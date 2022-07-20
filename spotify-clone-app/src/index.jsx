@@ -11,6 +11,7 @@ import {
   Route,
 } from "react-router-dom";
 import MyTrack from './MyTrack';
+import Search from "./Search"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -20,6 +21,7 @@ root.render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path='MyTrack' element={<MyTrack/>}/>
+        <Route path='Search' element={<Search/>}/>
       </Routes>
 
 

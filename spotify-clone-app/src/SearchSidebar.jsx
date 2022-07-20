@@ -8,12 +8,8 @@ import { getTokenFromResponse } from "./spotify";
 import { useDataLayerValue } from "./DataLayer";
 import { Link } from "react-router-dom";
 
-function Sidebar() {
-  const [{ playlists }, dispatch] = useDataLayerValue();
-  console.log("Playlist", playlists);
-  let p = {
-    items: [1, 2, 3],
-  };
+function SearchSidebar() {
+  
   return (
     <div className="sidebar">
       <img
@@ -23,10 +19,8 @@ function Sidebar() {
       />
 
       <SidebarOption Icon={AiFillHome} title="Home" />
-      <Link to="Search">
-        <SidebarOption Icon={BsSearch} title="Search" />
-      </Link>
-      <Link to="MyTrack">
+     
+      <Link to="/MyTrack">
         <SidebarOption Icon={BiLibrary} title="MyTrack" />
       </Link>
       <br />
@@ -34,11 +28,8 @@ function Sidebar() {
       <strong className="sidebar__title">PLAYLISTS</strong>
       <hr />
 
-      {playlists?.items?.map((playlist, key) => (
-        <SidebarOption title={playlist.name} />
-      ))}
     </div>
   );
 }
 
-export default Sidebar;
+export default SearchSidebar;

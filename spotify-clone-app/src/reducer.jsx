@@ -66,6 +66,11 @@ const reducer = (state, action) => {
         ...state,
         spotify: action.spotify,
       };
+    case "SET_SEARCH_TRACK":
+      return {
+        ...state,
+        search_track: action.search_track,
+      };
 
     default:
       return state;

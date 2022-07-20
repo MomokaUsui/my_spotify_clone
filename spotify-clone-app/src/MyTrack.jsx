@@ -12,9 +12,9 @@ function MyTrack() {
 
     return (
         <div className='MyTrack'>
-            <Sidebar/>
+            {/* <Sidebar/> */}
 
-            {/* <MySidebar /> */}
+            <MySidebar />
             <MyBody />
 
         </div>
