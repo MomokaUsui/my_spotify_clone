@@ -1,8 +1,8 @@
 import React from 'react'
-import MyHeader from './MyHeader'
-import MySidebar from './MySidebar'
+import MyHeader from '../My/MyHeader'
+import MySidebar from '../My/MySidebar'
 import SearchBody from './SearchBody'
-import "./MyTrack.css"
+import "../MyTrack.css"
 import SearchSidebar from './SearchSidebar'
 
 function Search() {

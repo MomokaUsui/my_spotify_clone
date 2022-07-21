@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
-import "./MySidebar.css";
-import SidebarOption from "./SidebarOption";
+import "../MySidebar.css";
+import SidebarOption from "../Components/SidebarOption";
 import { AiFillHome } from "react-icons/ai";
 import { BsSearch } from "react-icons/bs";
 import { BiLibrary } from "react-icons/bi";
-import { getTokenFromResponse } from "./spotify";
-import { useDataLayerValue } from "./DataLayer";
+import { getTokenFromResponse } from "../spotify";
+import { useDataLayerValue } from "../DataLayer";
 import { Link } from "react-router-dom";
 
 function MySidebar() {

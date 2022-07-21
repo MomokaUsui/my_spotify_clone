@@ -1,11 +1,11 @@
 
 import React from 'react'
-import "./Header.css"
+import "../Header.css"
 import { BsSearch } from "react-icons/bs";
 import Avatar from '@mui/material/Avatar';
 import { useEffect } from "react";
 // import { useStateValue } from "./StateProvider";
-import { useDataLayerValue } from './DataLayer';
+import { useDataLayerValue } from '../DataLayer';
 import { Link } from '@mui/material';
 
 function Header({ spotify }) {

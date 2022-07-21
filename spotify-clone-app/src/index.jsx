@@ -10,8 +10,8 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import MyTrack from './MyTrack';
-import Search from "./Search"
+import MyTrack from './My/MyTrack';
+import Search from "./Search/Search"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

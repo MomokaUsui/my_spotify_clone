@@ -1,16 +1,22 @@
 import React from "react";
-import "./Header.css";
+import "../Header.css";
 import { BsSearch } from "react-icons/bs";
 import Avatar from "@mui/material/Avatar";
-import { useDataLayerValue } from "./DataLayer";
+import { useDataLayerValue } from "../DataLayer";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import SearchMain from "../Search/SearchMain"
 
 function MyHeader({ spotify }) {
   const [{ user }, dispatch] = useDataLayerValue();
-  // const [{ top_tracks }, dispatch2] = useDataLayerValue();
-  // console.log("tracks",top_tracks)
-  //ここでは取ってこれているのに、なぜか、returnではできない。
+
   console.log("user", user);
+
+  // const [searchText, setSearchText] = useState("");
+
+  // const handleChange = (e) => {
+  //   setSearchText(e.target.value);
+  // };
 
   return (
     <div className="header">
@@ -19,7 +25,9 @@ function MyHeader({ spotify }) {
         <input
           placeholder="Search for Artists, Songs, or Podcasts "
           type="text"
+          // onChange={handleChange}
         />
+        {/* <SearchMain word={searchText} /> */}
       </div>
       <div className="header__center"></div>
       <div className="header__right">

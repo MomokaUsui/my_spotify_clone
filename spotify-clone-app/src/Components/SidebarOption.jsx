@@ -1,6 +1,6 @@
 import { Link } from "@mui/material";
 import React from "react";
-import "./SidebarOption.css";
+import "../SidebarOption.css";
 
 function SidebarOption({ title, Icon }) {
   return (

@@ -1,7 +1,6 @@
 import React from "react";
-import "./SearchBody.css";
-import Header from "./Header";
-import { useDataLayerValue } from "./DataLayer";
+import "../SearchBody.css";
+import { useDataLayerValue } from "../DataLayer";
 import {
   BiCircle,
   BiDotsHorizontal,
@@ -10,8 +9,8 @@ import {
   BiPlayCircle,
 } from "react-icons/bi";
 import { BsHeartFill } from "react-icons/bs";
-import SongRow from "./SongRow";
-import MyHeader from "./MyHeader";
+import SongRow from "../Components/SongRow";
+import MyHeader from "../My/MyHeader";
 
 function SearchBody() {
   const [{ search_track }, dispatch] = useDataLayerValue();

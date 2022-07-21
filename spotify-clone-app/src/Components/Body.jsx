@@ -1,7 +1,7 @@
 import React from 'react'
-import "./Body.css"
+import "../Body.css"
 import Header from './Header'
-import { useDataLayerValue } from "./DataLayer"
+import { useDataLayerValue } from "../DataLayer"
 import { BiCircle, BiDotsHorizontal, BiHeart, BiHorizontalCenter, BiPlayCircle } from 'react-icons/bi';
 import { BsHeartFill } from 'react-icons/bs';
 import SongRow from './SongRow';

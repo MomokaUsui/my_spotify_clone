@@ -1,7 +1,7 @@
 import React from "react";
-import "./MyBody.css";
-import Header from "./Header";
-import { useDataLayerValue } from "./DataLayer";
+import "../MyBody.css";
+import Header from "../Components/Header";
+import { useDataLayerValue } from "../DataLayer";
 import {
   BiCircle,
   BiDotsHorizontal,
@@ -10,7 +10,7 @@ import {
   BiPlayCircle,
 } from "react-icons/bi";
 import { BsHeartFill } from "react-icons/bs";
-import SongRow from "./SongRow";
+import SongRow from "../Components/SongRow";
 import MyHeader from "./MyHeader";
 
 function MyBody() {

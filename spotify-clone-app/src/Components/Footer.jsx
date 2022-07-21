@@ -1,5 +1,5 @@
 import React from 'react'
-import "./Footer.css"
+import "../Footer.css"
 import { BsFillSkipStartFill } from "react-icons/bs";
 import { BsSkipEndFill } from "react-icons/bs";
 import { BsPlayCircle } from "react-icons/bs";
