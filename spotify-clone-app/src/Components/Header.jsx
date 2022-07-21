@@ -1,12 +1,14 @@
 
 import React from 'react'
-import "./Header.css"
+import "../Header.css"
 import { BsSearch } from "react-icons/bs";
 import Avatar from '@mui/material/Avatar';
-import { useDataLayerValue } from './DataLayer';
-import { Link } from "react-router-dom"
+import { useEffect } from "react";
+// import { useStateValue } from "./StateProvider";
+import { useDataLayerValue } from '../DataLayer';
+import { Link } from '@mui/material';
 
-function MyHeader({ spotify }) {
+function Header({ spotify }) {
     const [{ user }, dispatch] = useDataLayerValue();
     // const [{ top_tracks }, dispatch2] = useDataLayerValue();
     // console.log("tracks",top_tracks)
@@ -22,11 +24,11 @@ function MyHeader({ spotify }) {
                     type="text"
                 />
             </div>
-            <div className='header__center'>
+            {/* <div className='header__center'>
                 <Link to="/">
-                    <button>Home</button>
+                    <button />
                 </Link>
-            </div>
+            </div> */}
             <div className="header__right">
 
 
@@ -39,4 +41,4 @@ function MyHeader({ spotify }) {
     )
 }
 
-export default MyHeader
+export default Header
