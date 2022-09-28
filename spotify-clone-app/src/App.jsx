@@ -1,25 +1,36 @@
 import { useEffect, useState } from "react";
-import "./App.css"
-import Login from "./Login";
 import { getTokenFromUrl } from "./spotify";
 import SpotifyWebApi from "spotify-web-api-js";
-import Player from "./Components/Player"
+import Login from "./Login";
+import Player from "./Components/Player";
+import "./App.css";
 import { DataLayer, useDataLayerValue } from "./DataLayer";
 import { SearchWord } from "./Search/SearchMain";
+import {
+  RecoilRoot,
+  atom,
+  selector,
+  useRecoilState,
+  useRecoilValue,
+} from "recoil";
+import { searchAtom } from "./SearchAtom";
+
 const spotify = new SpotifyWebApi();
 
-
-
 function App() {
-
   const [token, setToken] = useState(null);
   const [{ user }, dispatch] = useDataLayerValue();
+  // const word = useRecoilState(searchText);
+  const word = useRecoilValue(searchAtom);
 
+  // useRecoilState(searchText);
+  // useEffect(() => {
+  //   console.log(word);
+  // }, [word]);
   useEffect(() => {
     const hash = getTokenFromUrl();
     window.location.hash = "";
     const _token = hash.access_token;
-    // const text = SearchWord();
 
     if (_token) {
       setToken(_token);
@@ -61,8 +72,9 @@ function App() {
       );
 
       //追加7/20日TODO:
+      // `${joy}`
 
-      spotify.searchTracks("joy").then((response) =>
+      spotify.searchTracks(`${word}`).then((response) =>
         dispatch({
           type: "SET_SEARCH_TRACK",
           search_track: response,
@@ -75,7 +87,7 @@ function App() {
       });
     }
     // console.log("I HAVE A TOKEN>>>", token)
-  }, []);
+  }, [word]);
 
   console.log("👨", user);
   console.log("👾", token);

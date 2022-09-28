@@ -11,12 +11,17 @@ import {
 import { BsHeartFill } from "react-icons/bs";
 import SongRow from "../Components/SongRow";
 import MyHeader from "../My/MyHeader";
+import { useRecoilState } from "recoil";
+import { searchAtom } from "../SearchAtom";
 
 function SearchBody() {
-  const [{ search_track }, dispatch] = useDataLayerValue();
+  const [{ search_track }, _] = useDataLayerValue();
+  const word = useRecoilState(searchAtom);
+  console.log("word", word);
 
   console.log("track😊", search_track);
   console.log("track😎", search_track.tracks.items);
+
   return (
     <div>
       <div className="searchbody">
