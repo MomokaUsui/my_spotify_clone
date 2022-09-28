@@ -5,18 +5,21 @@ import Avatar from "@mui/material/Avatar";
 import { useDataLayerValue } from "../DataLayer";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import SearchMain from "../Search/SearchMain"
+import SearchMain from "../Search/SearchMain";
+import { useRecoilState } from "recoil";
+import { searchAtom } from "../SearchAtom";
 
-function MyHeader({ spotify }) {
+function MyHeader() {
   const [{ user }, dispatch] = useDataLayerValue();
 
+  const [searchText, setSearchText] = useRecoilState(searchAtom);
+  console.log("searchText", searchText);
+
   console.log("user", user);
-
-  // const [searchText, setSearchText] = useState("");
-
-  // const handleChange = (e) => {
-  //   setSearchText(e.target.value);
-  // };
+  const handleChange = (e) => {
+    setSearchText(e.target.value);
+    console.log("searchText", searchText);
+  };
 
   return (
     <div className="header">
@@ -25,7 +28,7 @@ function MyHeader({ spotify }) {
         <input
           placeholder="Search for Artists, Songs, or Podcasts "
           type="text"
-          // onChange={handleChange}
+          onChange={handleChange}
         />
         {/* <SearchMain word={searchText} /> */}
       </div>

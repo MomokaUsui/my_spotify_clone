@@ -37,9 +37,7 @@ function MyBody() {
             <SongRow track={item} /> */}
            
         
-          {/* ))} */}
-
-          {/* {console.log(top_tracks.track)} */}
+    
         </div>
       </div>
     </div>
