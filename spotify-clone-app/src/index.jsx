@@ -12,6 +12,7 @@ import {
 } from "react-router-dom";
 import MyTrack from './My/MyTrack';
 import Search from "./Search/Search"
+import { SongChart } from './Chart/SongChart';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -22,6 +23,7 @@ root.render(
         <Route path="/" element={<App />} />
         <Route path='MyTrack' element={<MyTrack/>}/>
         <Route path='Search' element={<Search/>}/>
+        <Route path='chart' element={<SongChart/>}/>
       </Routes>
 
 
