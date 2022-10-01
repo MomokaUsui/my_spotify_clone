@@ -8,8 +8,6 @@ import { DataLayer, useDataLayerValue } from "./DataLayer";
 import { SearchWord } from "./Search/SearchMain";
 const spotify = new SpotifyWebApi();
 
-
-
 function App() {
 
   const [token, setToken] = useState(null);
@@ -59,7 +57,6 @@ function App() {
           top_tracks: response,
         })
       );
-
       //追加7/20日TODO:
 
       spotify.searchTracks("joy").then((response) =>
@@ -75,10 +72,25 @@ function App() {
       });
     }
     // console.log("I HAVE A TOKEN>>>", token)
-  }, []);
 
-  console.log("👨", user);
-  console.log("👾", token);
+    //spotify分析追加
+    
+    spotify.getAudioAnalysisForTrack("4kPlQKwtPrnqLgrmmKFSlA").then((response)=>
+    dispatch({
+      type: "AUDIO_ANALYSIS",
+      analysis_track: response,
+    }))
+    spotify.getAudioFeaturesForTracks("4kPlQKwtPrnqLgrmmKFSlA").then((response)=>
+    dispatch({
+      type: "AUDIO_FEATURES",
+      features_track: response,
+    })
+    )
+  }, []);
+  
+
+  // console.log("👨", user);
+  // console.log("👾", token);
 
   return (
     <div className="App">

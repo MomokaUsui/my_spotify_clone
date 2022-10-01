@@ -12,11 +12,14 @@ import {
 import { BsHeartFill } from "react-icons/bs";
 import SongRow from "../Components/SongRow";
 import MyHeader from "./MyHeader";
+import { SongChart } from "../Chart/SongChart";
 
 function MyBody() {
-  const [{ top_tracks }, dispatch] = useDataLayerValue();
-  const [{ user }, dispatch3] = useDataLayerValue();
+  const [{ top_tracks, user, analysis_track,features_track}] = useDataLayerValue();
+
   console.log("tracks", top_tracks);
+  console.log("analysis_track!!!!!!!",analysis_track)
+  console.log("!!!!!!!features!!!!!!!",features_track)
 
   return (
     <div>
