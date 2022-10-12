@@ -9,7 +9,7 @@ export const initialState = {
 //ここ何やっているのか？？復習！reducer
 
 const reducer = (state, action) => {
-  console.log(action);
+  // console.log(action);
   switch (action.type) {
     case "SET_USER":
       return {
@@ -56,11 +56,6 @@ const reducer = (state, action) => {
         ...state,
         item: action.item,
       };
-    case "SET_TOP_ARTISTS":
-      return {
-        ...state,
-        top_artists: action.top_artists,
-      };
     case "SET_SPOTIFY":
       return {
         ...state,
@@ -71,6 +66,23 @@ const reducer = (state, action) => {
         ...state,
         search_track: action.search_track,
       };
+    case "AUDIO_ANALYSIS":
+      return {
+        ...state,
+        analysis_track: action.analysis_track,
+      };
+    case "AUDIO_FEATURES":
+      return {
+        ...state,
+        features_track: action.features_track,
+      };
+    case "TRACKS_FEATURES":
+      return {
+        ...state,
+        tracks_features: action.tracks_features,
+      }; 
+      
+                
 
     default:
       return state;

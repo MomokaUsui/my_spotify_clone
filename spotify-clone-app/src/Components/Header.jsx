@@ -13,7 +13,7 @@ function Header({ spotify }) {
     // const [{ top_tracks }, dispatch2] = useDataLayerValue();
     // console.log("tracks",top_tracks)
     //ここでは取ってこれているのに、なぜか、returnではできない。
-    console.log("user", user)
+    // console.log("user", user)
 
     return (
         <div className="header">

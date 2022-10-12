@@ -8,8 +8,6 @@ import { DataLayer, useDataLayerValue } from "./DataLayer";
 import { SearchWord } from "./Search/SearchMain";
 const spotify = new SpotifyWebApi();
 
-
-
 function App() {
 
   const [token, setToken] = useState(null);
@@ -20,14 +18,12 @@ function App() {
     window.location.hash = "";
     const _token = hash.access_token;
     // const text = SearchWord();
-
     if (_token) {
       setToken(_token);
       dispatch({
         type: "SET_TOKEN",
         token: _token,
       });
-
       //dispatch 送る、送り出す、発送する、急送する
 
       spotify.setAccessToken(_token);
@@ -37,21 +33,18 @@ function App() {
           user: user,
         });
       });
-
       spotify.getUserPlaylists().then((playlists) => {
         dispatch({
           type: "SET_PLAYLISTS",
           playlists: playlists,
         });
       });
-
       spotify.getPlaylist("37i9dQZEVXbKXQ4mDTEBXq").then((response) => {
         dispatch({
           type: "SET_DISCOVER_WEEKLY",
           discover_weekly: response,
         });
       });
-
       //追加(7/17)
       spotify.getMyRecentlyPlayedTracks().then((response) =>
         dispatch({
@@ -59,7 +52,6 @@ function App() {
           top_tracks: response,
         })
       );
-
       //追加7/20日TODO:
 
       spotify.searchTracks("joy").then((response) =>
@@ -75,10 +67,32 @@ function App() {
       });
     }
     // console.log("I HAVE A TOKEN>>>", token)
-  }, []);
 
-  console.log("👨", user);
-  console.log("👾", token);
+    //spotify分析追加
+    
+    spotify.getAudioAnalysisForTrack("4kPlQKwtPrnqLgrmmKFSlA").then((response)=>
+    dispatch({
+      type: "AUDIO_ANALYSIS",
+      analysis_track: response,
+    }))
+
+    spotify.getAudioFeaturesForTrack("4kPlQKwtPrnqLgrmmKFSlA").then((response)=>
+    dispatch({
+      type: "AUDIO_FEATURES",
+      features_track: response,
+    })
+    )
+    spotify.getAudioFeaturesForTracks(["4kPlQKwtPrnqLgrmmKFSlA","2NRClj4jFGy35kmAooFcTN"]).then((response)=>
+    dispatch({
+      type: "TRACKS_FEATURES",
+      tracks_features: response,
+    })
+    )
+  }, []);
+  
+
+  // console.log("👨", user);
+  // console.log("👾", token);
 
   return (
     <div className="App">

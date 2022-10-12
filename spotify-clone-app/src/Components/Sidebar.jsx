@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 
 function Sidebar() {
   const [{ playlists }, dispatch] = useDataLayerValue();
-  console.log("Playlist", playlists);
+  // console.log("Playlist", playlists);
   let p = {
     items: [1, 2, 3],
   };
@@ -28,6 +28,9 @@ function Sidebar() {
       </Link>
       <Link to="MyTrack">
         <SidebarOption Icon={BiLibrary} title="MyTrack" />
+      </Link>
+      <Link to="chart">
+        <SidebarOption Icon={BiLibrary} title="Chart" />
       </Link>
       <br />
 
