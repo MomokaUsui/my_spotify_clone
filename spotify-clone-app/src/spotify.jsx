@@ -1,7 +1,7 @@
-import { CLIENT_ID } from "./config";
+import { clientid } from "./config";
 
 export const authEndpoint = "https://accounts.spotify.com/authorize";
-const clientId = CLIENT_ID;
+const clientId = clientid;
 const redirectUri = "http://localhost:3000/";
 const scopes = [
   "user-read-playback-position",
