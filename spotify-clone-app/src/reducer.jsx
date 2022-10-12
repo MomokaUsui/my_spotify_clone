@@ -76,6 +76,11 @@ const reducer = (state, action) => {
         ...state,
         features_track: action.features_track,
       };
+    case "TRACKS_FEATURES":
+      return {
+        ...state,
+        tracks_features: action.tracks_features,
+      }; 
       
                 
 

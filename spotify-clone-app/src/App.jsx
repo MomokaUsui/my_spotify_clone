@@ -18,14 +18,12 @@ function App() {
     window.location.hash = "";
     const _token = hash.access_token;
     // const text = SearchWord();
-
     if (_token) {
       setToken(_token);
       dispatch({
         type: "SET_TOKEN",
         token: _token,
       });
-
       //dispatch 送る、送り出す、発送する、急送する
 
       spotify.setAccessToken(_token);
@@ -35,21 +33,18 @@ function App() {
           user: user,
         });
       });
-
       spotify.getUserPlaylists().then((playlists) => {
         dispatch({
           type: "SET_PLAYLISTS",
           playlists: playlists,
         });
       });
-
       spotify.getPlaylist("37i9dQZEVXbKXQ4mDTEBXq").then((response) => {
         dispatch({
           type: "SET_DISCOVER_WEEKLY",
           discover_weekly: response,
         });
       });
-
       //追加(7/17)
       spotify.getMyRecentlyPlayedTracks().then((response) =>
         dispatch({
@@ -80,10 +75,17 @@ function App() {
       type: "AUDIO_ANALYSIS",
       analysis_track: response,
     }))
-    spotify.getAudioFeaturesForTracks("4kPlQKwtPrnqLgrmmKFSlA").then((response)=>
+
+    spotify.getAudioFeaturesForTrack("4kPlQKwtPrnqLgrmmKFSlA").then((response)=>
     dispatch({
       type: "AUDIO_FEATURES",
       features_track: response,
+    })
+    )
+    spotify.getAudioFeaturesForTracks(["4kPlQKwtPrnqLgrmmKFSlA","2NRClj4jFGy35kmAooFcTN"]).then((response)=>
+    dispatch({
+      type: "TRACKS_FEATURES",
+      tracks_features: response,
     })
     )
   }, []);

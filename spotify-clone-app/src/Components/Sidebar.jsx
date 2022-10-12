@@ -29,6 +29,9 @@ function Sidebar() {
       <Link to="MyTrack">
         <SidebarOption Icon={BiLibrary} title="MyTrack" />
       </Link>
+      <Link to="chart">
+        <SidebarOption Icon={BiLibrary} title="Chart" />
+      </Link>
       <br />
 
       <strong className="sidebar__title">PLAYLISTS</strong>
