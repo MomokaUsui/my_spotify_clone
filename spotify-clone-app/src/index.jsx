@@ -17,7 +17,7 @@ import { SongChart } from './Chart/SongChart';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 
-  <BrowserRouter>
+  <BrowserRouter basename={process.env.PUBLIC_URL}>
     <DataLayer initialState={initialState} reducer={reducer}>
       <Routes>
         <Route path="/" element={<App />} />
@@ -25,8 +25,6 @@ root.render(
         <Route path='Search' element={<Search/>}/>
         <Route path='chart' element={<SongChart/>}/>
       </Routes>
-
-
     </DataLayer>
   </BrowserRouter>
 
