@@ -1,19 +1,12 @@
 import React from "react";
 import "../SearchBody.css";
 import { useDataLayerValue } from "../DataLayer";
-import {
-  BiCircle,
-  BiDotsHorizontal,
-  BiHeart,
-  BiHorizontalCenter,
-  BiPlayCircle,
-} from "react-icons/bi";
-import { BsHeartFill } from "react-icons/bs";
+
 import SongRow from "../Components/SongRow";
 import MyHeader from "../My/MyHeader";
 
 function SearchBody() {
-  const [{ search_track }, dispatch] = useDataLayerValue();
+  const [{ search_track }] = useDataLayerValue();
 
   console.log("track😊", search_track);
   console.log("track😎", search_track.tracks.items);
