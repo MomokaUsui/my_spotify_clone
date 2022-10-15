@@ -17,7 +17,7 @@ import { SongChart } from './Chart/SongChart';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 
-  <BrowserRouter basename={process.env.PUBLIC_URL}>
+  <BrowserRouter>
     <DataLayer initialState={initialState} reducer={reducer}>
       <Routes>
         <Route path="/" element={<App />} />
