@@ -39,7 +39,8 @@ export const SongChart = ({ track_features }) => {
     ],
     datasets: [
       {
-        label: "# of Votes",
+        label:"analysis",
+
         data: [
           track_features.acousticness,
           track_features.danceability,
