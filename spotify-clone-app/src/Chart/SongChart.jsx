@@ -9,17 +9,8 @@ import {
   Legend,
 } from "chart.js";
 import { Radar } from "react-chartjs-2";
-import { useDataLayerValue } from "../DataLayer";
-import { useParams } from "react-router-dom";
-import { useRecoilState } from "recoil";
-import { songIdAtom } from "./SongIdAtom";
 
 export const SongChart = ({ track_features }) => {
-  // const { id } = useParams();
-  // const [ songId, setSongId ] = useRecoilState(songIdAtom);
-  // await setSongId(id)
-  // const [{ track_features, tracks_features }] = useDataLayerValue();
-
   console.log(track_features);
   console.log("!!!!!!!features!!!!!!!", track_features.danceability);
   console.log("!!!!!!!features!!!!!!!", track_features.energy);
@@ -66,14 +57,7 @@ export const SongChart = ({ track_features }) => {
 
   return (
     <div>
-      {/* {track_features ? (
-        <>
-          <Radar data={data} className="chart" />
-        </>
-      ) : (
-        <></>
-      )} */}
-      <Radar data={data} className="chart" />
+      <Radar style={{}} data={data} className="chart" />
     </div>
   );
 };
