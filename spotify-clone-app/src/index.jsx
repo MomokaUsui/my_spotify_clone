@@ -16,7 +16,7 @@ root.render(
   <BrowserRouter>
     <DataLayer initialState={initialState} reducer={reducer}>
       <RecoilRoot>
-        <Routes>
+        <Routes basename={process.env.PUBLIC_URL}>
           <Route path="/" element={<App />} />
           <Route path="MyTrack" element={<MyTrack />} />
           <Route path="Search" element={<Search />} />
