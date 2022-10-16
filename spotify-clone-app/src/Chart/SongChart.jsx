@@ -15,13 +15,18 @@ import { useRecoilState } from "recoil";
 import { songIdAtom } from "./SongIdAtom";
 
 export const SongChart = () => {
+  // const { id } = useParams();
   const [ songId, setSongId ] = useRecoilState(songIdAtom);
-  console.log(songId)
+  // await setSongId(id)
+
   const [{ track_features, tracks_features }] = useDataLayerValue();
   console.log(track_features)
+
+  // console.log(songId)
   const musics = tracks_features.audio_features.map((value) => {
     return (value).danceability;
   });
+  
 
   console.log(musics)
   console.log("!!!!!!!features!!!!!!!", track_features.danceability);

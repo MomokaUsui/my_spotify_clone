@@ -17,10 +17,10 @@ function SearchSidebar() {
         src="https://getheavy.com/wp-content/uploads/2019/12/spotify2019-830x350.jpg"
         alt=""
       />
-      <Link to="/">
+      <Link to="/" style={{ textDecoration: 'none' }}>
       <SidebarOption Icon={AiFillHome} title="Home" />
       </Link>
-      <Link to="/MyTrack">
+      <Link to="/MyTrack" style={{ textDecoration: 'none' }}>
         <SidebarOption Icon={BiLibrary} title="MyTrack" />
       </Link>
       <br />

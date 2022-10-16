@@ -94,12 +94,12 @@ function App() {
     }
   }, [songId]);
   
-  spotify.getAudioFeaturesForTrack(songId).then((response) =>
-        dispatch({
-          type: "AUDIO_FEATURES",
-          track_features: response,
-        })
-      );
+  // spotify.getAudioFeaturesForTrack(songId).then((response) =>
+  //       dispatch({
+  //         type: "AUDIO_FEATURES",
+  //         track_features: response,
+  //       })
+  //     );
 
   // useEffect(() => {
   //   spotify.getAudioFeaturesForTrack(songId).then((response)=>

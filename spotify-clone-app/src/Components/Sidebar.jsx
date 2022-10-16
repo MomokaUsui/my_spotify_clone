@@ -1,19 +1,13 @@
-import React, { useEffect } from "react";
 import "../Sidebar.css";
 import SidebarOption from "./SidebarOption";
 import { AiFillHome } from "react-icons/ai";
 import { BsSearch } from "react-icons/bs";
 import { BiLibrary } from "react-icons/bi";
-import { getTokenFromResponse } from "../spotify";
 import { useDataLayerValue } from "../DataLayer";
 import { Link } from "react-router-dom";
 
 function Sidebar() {
-  const [{ playlists }, dispatch] = useDataLayerValue();
-  // console.log("Playlist", playlists);
-  let p = {
-    items: [1, 2, 3],
-  };
+  const [{ playlists }, dispatch] = useDataLayerValue();;
   return (
     <div className="sidebar">
       <img
@@ -23,14 +17,11 @@ function Sidebar() {
       />
 
       <SidebarOption Icon={AiFillHome} title="Home" />
-      <Link to="Search">
+      <Link to="Search" style={{ textDecoration: 'none' }}>
         <SidebarOption Icon={BsSearch} title="Search" />
       </Link>
-      <Link to="MyTrack">
+      <Link to="MyTrack" style={{ textDecoration: 'none' }}>
         <SidebarOption Icon={BiLibrary} title="MyTrack" />
-      </Link>
-      <Link to="chart">
-        <SidebarOption Icon={BiLibrary} title="Chart" />
       </Link>
       <br />
 
