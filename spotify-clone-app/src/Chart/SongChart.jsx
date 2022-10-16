@@ -14,21 +14,13 @@ import { useParams } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { songIdAtom } from "./SongIdAtom";
 
-export const SongChart = () => {
+export const SongChart = ({ track_features }) => {
   // const { id } = useParams();
-  const [ songId, setSongId ] = useRecoilState(songIdAtom);
+  // const [ songId, setSongId ] = useRecoilState(songIdAtom);
   // await setSongId(id)
+  // const [{ track_features, tracks_features }] = useDataLayerValue();
 
-  const [{ track_features, tracks_features }] = useDataLayerValue();
-  console.log(track_features)
-
-  // console.log(songId)
-  const musics = tracks_features.audio_features.map((value) => {
-    return (value).danceability;
-  });
-  
-
-  console.log(musics)
+  console.log(track_features);
   console.log("!!!!!!!features!!!!!!!", track_features.danceability);
   console.log("!!!!!!!features!!!!!!!", track_features.energy);
   console.log("!!!!!!!features!!!!!!!", track_features.liveness);
@@ -74,6 +66,13 @@ export const SongChart = () => {
 
   return (
     <div>
+      {/* {track_features ? (
+        <>
+          <Radar data={data} className="chart" />
+        </>
+      ) : (
+        <></>
+      )} */}
       <Radar data={data} className="chart" />
     </div>
   );
