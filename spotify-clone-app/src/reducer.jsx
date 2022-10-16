@@ -74,7 +74,7 @@ const reducer = (state, action) => {
     case "AUDIO_FEATURES":
       return {
         ...state,
-        features_track: action.features_track,
+        track_features: action.track_features,
       };
     case "TRACKS_FEATURES":
       return {

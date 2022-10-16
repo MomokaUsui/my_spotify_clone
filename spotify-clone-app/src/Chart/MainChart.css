@@ -1,0 +1,15 @@
+.chart{
+    width: 500px;
+}
+
+.mainChart{
+    background-color: whitesmoke;
+    width: auto;
+    height:100vh;
+    padding: 30px;
+}
+
+.title{
+    color: brown;
+    font-weight: bold;
+}
