@@ -1,11 +1,21 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useRecoilState } from "recoil";
+import { songIdAtom } from "../Chart/SongIdAtom";
 import "../SongRow.css";
 
 function SongRow({ track, playsong }) {
+  // const navigate = useNavigate();
+  // const [songId, setSongId] = useRecoilState(songIdAtom);
+
+  // const buttonClick = (id) => {
+  //   console.log("f");
+  //   setSongId(id);
+  //   // navigate(`/chart/${id}`);
+  // };
+
   return (
-   
-    <Link style={{ textDecoration: 'none' }} to={`/chart/${track.id}`}>
+    <Link style={{ textDecoration: "none" }} to={`/chart/${track.id}`}>
       <div className="songRow">
         <img
           className="songRow__album"

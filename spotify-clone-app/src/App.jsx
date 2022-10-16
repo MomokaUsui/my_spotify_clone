@@ -1,19 +1,24 @@
 import { useEffect, useState } from "react";
-import "./App.css"
+import "./App.css";
 import Login from "./Login";
 import { getTokenFromUrl } from "./spotify";
 import SpotifyWebApi from "spotify-web-api-js";
-import Player from "./Components/Player"
+import Player from "./Components/Player";
 import { DataLayer, useDataLayerValue } from "./DataLayer";
 import { SearchWord } from "./Search/SearchMain";
+import { useRecoilState } from "recoil";
+import { songIdAtom, tokenAtom } from "./Chart/SongIdAtom";
 const spotify = new SpotifyWebApi();
 
 function App() {
-
-  const [token, setToken] = useState(null);
   const [{ user }, dispatch] = useDataLayerValue();
+  const [songId, setSongId] = useRecoilState(songIdAtom);
+  const [token, setToken] = useRecoilState(tokenAtom);
+  console.log("songIDddddddddddd", songId);
+  // const[ songIdSong, setsongIdSong ] = useState(songId)
 
   useEffect(() => {
+    console.log("useEffectの作動はこのタイミングです")
     const hash = getTokenFromUrl();
     window.location.hash = "";
     const _token = hash.access_token;
@@ -65,31 +70,45 @@ function App() {
         type: "SET_SPOTIFY",
         spotify: spotify,
       });
+      //spotify分析追加
+
+      spotify
+        .getAudioAnalysisForTrack("4kPlQKwtPrnqLgrmmKFSlA")
+        .then((response) =>
+          dispatch({
+            type: "AUDIO_ANALYSIS",
+            analysis_track: response,
+          })
+        );
+      spotify
+        .getAudioFeaturesForTracks([
+          "4kPlQKwtPrnqLgrmmKFSlA",
+          "2NRClj4jFGy35kmAooFcTN",
+        ])
+        .then((response) =>
+          dispatch({
+            type: "TRACKS_FEATURES",
+            tracks_features: response,
+          })
+        );
     }
-    // console.log("I HAVE A TOKEN>>>", token)
-
-    //spotify分析追加
-    
-    spotify.getAudioAnalysisForTrack("4kPlQKwtPrnqLgrmmKFSlA").then((response)=>
-    dispatch({
-      type: "AUDIO_ANALYSIS",
-      analysis_track: response,
-    }))
-
-    spotify.getAudioFeaturesForTrack("4kPlQKwtPrnqLgrmmKFSlA").then((response)=>
-    dispatch({
-      type: "AUDIO_FEATURES",
-      track_features: response,
-    })
-    )
-    spotify.getAudioFeaturesForTracks(["4kPlQKwtPrnqLgrmmKFSlA","2NRClj4jFGy35kmAooFcTN"]).then((response)=>
-    dispatch({
-      type: "TRACKS_FEATURES",
-      tracks_features: response,
-    })
-    )
-  }, []);
+  }, [songId]);
   
+  spotify.getAudioFeaturesForTrack(songId).then((response) =>
+        dispatch({
+          type: "AUDIO_FEATURES",
+          track_features: response,
+        })
+      );
+
+  // useEffect(() => {
+  //   spotify.getAudioFeaturesForTrack(songId).then((response)=>
+  //   dispatch({
+  //     type: "AUDIO_FEATURES",
+  //     track_features: response,
+  //   }))
+  //   console.log("dfafafafafafgggggg")
+  // },[songId]);
 
   // console.log("👨", user);
   // console.log("👾", token);

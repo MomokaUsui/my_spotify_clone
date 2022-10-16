@@ -8,11 +8,11 @@
   color: white;
 }
 
-.songRow:hover {
+/* .songRow:hover {
   cursor: pointer;
   background-color: black;
   opacity: 0.8;
-}
+} */
 
 .songRow__info {
   margin-left: 20px;
@@ -31,4 +31,26 @@
 .songRow__album {
   height: 40px;
   width: 40px;
+}
+
+.button{
+  margin-left: auto;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  appearance: none;
+  padding: 10px;
+  border-radius: 99px;
+  background-color: #1db954;
+  font-weight: 800;
+  color: white;
+  text-decoration: none;
+}
+
+.button:hover{
+  background-color: green;
 }

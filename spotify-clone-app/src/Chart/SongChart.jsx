@@ -10,21 +10,20 @@ import {
 } from "chart.js";
 import { Radar } from "react-chartjs-2";
 import { useDataLayerValue } from "../DataLayer";
+import { useParams } from "react-router-dom";
+import { useRecoilState } from "recoil";
+import { songIdAtom } from "./SongIdAtom";
 
 export const SongChart = () => {
+  const [ songId, setSongId ] = useRecoilState(songIdAtom);
+  console.log(songId)
   const [{ track_features, tracks_features }] = useDataLayerValue();
-
+  console.log(track_features)
   const musics = tracks_features.audio_features.map((value) => {
     return (value).danceability;
   });
-  
 
   console.log(musics)
-
-
-
-
-
   console.log("!!!!!!!features!!!!!!!", track_features.danceability);
   console.log("!!!!!!!features!!!!!!!", track_features.energy);
   console.log("!!!!!!!features!!!!!!!", track_features.liveness);
