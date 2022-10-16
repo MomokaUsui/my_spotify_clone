@@ -17,9 +17,9 @@ function SearchSidebar() {
         src="https://getheavy.com/wp-content/uploads/2019/12/spotify2019-830x350.jpg"
         alt=""
       />
-
+      <Link to="/">
       <SidebarOption Icon={AiFillHome} title="Home" />
-     
+      </Link>
       <Link to="/MyTrack">
         <SidebarOption Icon={BiLibrary} title="MyTrack" />
       </Link>

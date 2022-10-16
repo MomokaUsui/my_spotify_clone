@@ -15,11 +15,11 @@ import MyHeader from "./MyHeader";
 import { SongChart } from "../Chart/SongChart";
 
 function MyBody() {
-  const [{ top_tracks, user, analysis_track,features_track}] = useDataLayerValue();
+  const [{ top_tracks, user, analysis_track,track_features}] = useDataLayerValue();
 
   console.log("tracks", top_tracks);
   console.log("analysis_track!!!!!!!",analysis_track)
-  console.log("!!!!!!!features!!!!!!!",features_track)
+  console.log("!!!!!!!features!!!!!!!",track_features)
 
   return (
     <div>

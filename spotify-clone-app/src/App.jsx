@@ -79,7 +79,7 @@ function App() {
     spotify.getAudioFeaturesForTrack("4kPlQKwtPrnqLgrmmKFSlA").then((response)=>
     dispatch({
       type: "AUDIO_FEATURES",
-      features_track: response,
+      track_features: response,
     })
     )
     spotify.getAudioFeaturesForTracks(["4kPlQKwtPrnqLgrmmKFSlA","2NRClj4jFGy35kmAooFcTN"]).then((response)=>
