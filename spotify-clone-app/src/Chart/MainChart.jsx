@@ -9,8 +9,7 @@ const spotify = new SpotifyWebApi();
 
 export const MainChart =  () => {
   const [{ user }, dispatch] = useDataLayerValue();
-  const [songId, setSongId] = useRecoilState(songIdAtom);
-  const { id } = useParams();
+  const [songId] = useRecoilState(songIdAtom);
   console.log(songId);
 
   useEffect(() => {
@@ -21,13 +20,8 @@ export const MainChart =  () => {
       })
     );
   }, []);
-  const [{ track_features, tracks_features }] = useDataLayerValue();
+  const [{ track_features }] = useDataLayerValue();
   console.log(track_features);
-  const buttonClick = (buttonId) => {
-    console.log("useparamsのid", buttonId);
-    setSongId(buttonId);
-    console.log("paramsからidを取得!!!!", songId);
-  };
 
   return (
     <div>
